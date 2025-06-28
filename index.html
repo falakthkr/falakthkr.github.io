@@ -1,383 +1,162 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Falak Thackar - Web Developer Portfolio</title>
-    <style>
-      body {
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f7f9fc;
-        color: #333;
-        overflow-x: hidden;
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Falak Thackar – Full Stack Developer</title>
+  <meta name="description" content="Falak Thackar – Full Stack Web & Mobile Developer using MERN and React Native." />
+  <meta name="author" content="Falak Thackar">
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <script defer data-domain="falakthkr.github.io" src="https://plausible.io/js/script.js"></script>
+  <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --text-light: #333;
+      --bg-dark: #121212;
+      --text-dark: #eee;
+    }
+    html[data-theme='light'] {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+    html[data-theme='dark'] {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.3s, color 0.3s;
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
+    }
 
-      header {
-        background-color: #002b5c;
-        color: white;
-        padding: 2em 1em;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-      header h1 {
-        margin: 0;
-        font-size: 3em;
-        font-weight: bold;
-        animation: slideIn 1.5s ease-out;
-      }
+    .projects {
+      margin-top: 2rem;
+    }
+    .project {
+      margin-bottom: 1.5rem;
+    }
+    .project h3 {
+      margin: 0 0 0.25rem;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-      header p {
-        margin: 0.5em 0 0;
-        font-size: 1.5em;
-        letter-spacing: 1px;
-        animation: fadeIn 2s ease-in-out;
-      }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
 
-      nav {
-        background-color: #01417e;
-        padding: 1em;
-        text-align: center;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        animation: fadeInDown 1.5s ease-in-out;
-      }
+    .buttons {
+      margin-top: 1rem;
+    }
 
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
+    button {
+      border: none;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background-color: #007acc;
+      color: white;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
 
-      nav a:hover {
-        color: #ffdd57;
-      }
+    .footer a {
+      margin-right: 1rem;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
 
-      section {
-        padding: 3em 1em;
-      }
+  <h1>Hi, I’m Falak 👋</h1>
+  <p>
+    I build clean, functional web & mobile apps using <strong>React, Node, MongoDB, and React Native (Expo)</strong>.
+    Focused on fast MVP delivery, clear structure, and minimal dependencies.
+  </p>
 
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
+  <div class="buttons">
+    <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+  </div>
 
-      .about,
-      .skills,
-      .experience,
-      .projects,
-      .contact {
-        background-color: white;
-        padding: 2em;
-        margin-bottom: 2em;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+  <div class="projects">
+    <h2>🚀 Projects</h2>
 
-      .about:hover,
-      .skills:hover,
-      .experience:hover,
-      .projects:hover,
-      .contact:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
+    <div class="project">
+      <h3>MERN App</h3>
+      <p>Boilerplate MERN app with role-based auth and dashboard layout.</p>
+      <a href="https://github.com/falakthkr/mern-app" target="_blank">GitHub →</a>
+    </div>
 
-      h2 {
-        color: #002b5c;
-        border-bottom: 3px solid #01417e;
-        padding-bottom: 0.5em;
-        margin-bottom: 1.5em;
-      }
+    <div class="project">
+      <h3>React Native Expo App</h3>
+      <p>Expo-based mobile app starter with navigation and session handling.</p>
+      <a href="https://github.com/falakthkr/react-native-expo-app" target="_blank">GitHub →</a>
+    </div>
 
-      .about p {
-        font-size: 1.2em;
-        line-height: 1.6;
-      }
+    <div class="project">
+      <h3>Realtime Dashboard</h3>
+      <p>WebSocket-powered dashboard using MERN stack and Chart.js.</p>
+      <a href="https://github.com/falakthkr/realtime-dashboard-websocket" target="_blank">GitHub →</a>
+    </div>
+  </div>
 
-      /* Carousel Styling */
-      .carousel-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin-top: 20px;
-      }
+  <form action="https://formspree.io/f/yourID" method="POST">
+    <h2>📬 Contact Me</h2>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Project or message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
-      .carousel-slide {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
+  <div class="footer">
+    <p>
+      <a href="mailto:falakthackar@gmail.com">📫 Email</a>
+      <a href="https://linkedin.com/in/falakthackar" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/falakthkr" target="_blank">🐙 GitHub</a>
+    </p>
+    <p>Open to remote/hybrid roles & freelance builds.</p>
+  </div>
 
-      .carousel-item {
-        min-width: 100%;
-        margin-right: 10px;
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #01417e;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .carousel-item h3 {
-        margin-bottom: 1em;
-      }
-
-      .carousel-item a {
-        color: #ffdd57;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-
-      .carousel-item a:hover {
-        color: #ffffff;
-      }
-
-      .carousel-buttons {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        transform: translateY(-50%);
-      }
-
-      .carousel-buttons button {
-        background-color: #002b5c;
-        border: none;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .carousel-buttons button:hover {
-        background-color: #01417e;
-      }
-
-      footer {
-        text-align: center;
-        padding: 2em;
-        background-color: #002b5c;
-        color: white;
-        animation: fadeIn 2s ease-in-out;
-      }
-
-      @keyframes slideIn {
-        from {
-          transform: translateX(-100%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Falak Thackar</h1>
-      <p>Creative Full-Stack Developer | MERN, ThreeJS, d3, P5.js</p>
-    </header>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <!-- <a href="#projects">Projects</a> -->
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <section class="container">
-      <div id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-          I'm Falak Thackar, a creative and dedicated full-stack developer with
-          over 3 years of experience. My passion lies in crafting dynamic web
-          applications that are both aesthetically pleasing and functionally
-          robust. With expertise in MERN stack, ThreeJS, d3, and P5.js, I bring
-          your ideas to life with cutting-edge technologies. I'm currently
-          venturing into freelancing and excited to partner with clients who
-          value innovation, quality, and creativity in their projects.
-        </p>
-      </div>
-
-      <div id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li>ReactJS</li>
-          <li>VueJS</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>ThreeJS</li>
-          <li>d3</li>
-          <li>P5.js</li>
-          <li>MongoDB</li>
-          <li>MySQL</li>
-          <li>HTML & CSS</li>
-          <li>JavaScript</li>
-          <li>Git</li>
-          <li>Agile Development</li>
-        </ul>
-      </div>
-
-      <div id="experience" class="experience">
-        <h2>Experience</h2>
-        <ul class="experience-list">
-          <li>
-            <strong>Software Engineer - Java | Checkpoint Systems</strong> -
-            Revamped APIs, enhanced efficiency, and mentored new interns.
-          </li>
-          <li>
-            <strong>Associate Software Engineer | Codemonk</strong> - Managed
-            VueJS-based systems, delivered platforms, and developed static site
-            generators.
-          </li>
-          <li>
-            <strong>Full Stack MERN Developer | Gether Tech</strong> -
-            Specialized in 3D development, statistical components, and server
-            health monitoring.
-          </li>
-          <li>
-            <strong>Frontend Engineer | WareIQ</strong> - Designed UIs for
-            logistics operations, optimized performance, and maintained code
-            quality.
-          </li>
-        </ul>
-      </div>
-
-      <!-- <div id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="carousel-container">
-          <div class="carousel-slide">
-            <div class="carousel-item">
-              <img
-                src="path/to/your/image.jpg"
-                alt="Project C Image"
-                class="carousel-image"
-              />
-              <h3>Project A</h3>
-              <p>
-                Description of the project, technologies used, and your role.
-              </p>
-              <a href="https://github.com/yourusername/projectA" target="_blank"
-                >GitHub Code</a
-              >
-            </div>
-            <div class="carousel-item">
-              <img
-                src="path/to/your/image.jpg"
-                alt="Project C Image"
-                class="carousel-image"
-              />
-              <h3>Project B</h3>
-              <p>
-                Description of the project, technologies used, and your role.
-              </p>
-              <a href="https://projectB-demo.com" target="_blank">Live Demo</a>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="path/to/your/image.jpg"
-                alt="Project C Image"
-                class="carousel-image"
-              />
-              <h3>Project C</h3>
-              <p>
-                Description of the project, technologies used, and your role.
-              </p>
-              <a
-                href="https://github.com/yourusername/projectC"
-                target="_blank"
-              >
-                GitHub Code
-              </a>
-            </div>
-          </div>
-          <div class="carousel-buttons">
-            <button id="prevBtn">&lt;</button>
-            <button id="nextBtn">&gt;</button>
-          </div>
-        </div>
-      </div> -->
-
-      <div id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>
-          I'm eager to collaborate with innovative minds on challenging
-          projects. If you're interested in working together, let's connect!
-        </p>
-        <p><strong>Email:</strong> falakthackar@gmail.com</p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a href="https://linkedin.com/in/falakthackar" target="_blank"
-            >linkedin.com/in/falakthackar</a
-          >
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2024 Falak Thackar. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
-      const carouselSlide = document.querySelector(".carousel-slide");
-      let counter = 0;
-
-      prevBtn.addEventListener("click", () => {
-        counter--;
-        if (counter < 0) {
-          counter = carouselSlide.children.length - 1;
-        }
-        updateCarousel();
-      });
-
-      nextBtn.addEventListener("click", () => {
-        counter++;
-        if (counter >= carouselSlide.children.length) {
-          counter = 0;
-        }
-        updateCarousel();
-      });
-
-      function updateCarousel() {
-        const width = carouselSlide.clientWidth;
-        carouselSlide.style.transform = `translateX(-${counter * width}px)`;
-      }
-
-      window.addEventListener("resize", updateCarousel);
-    </script>
-  </body>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
 </html>
