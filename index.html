@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Falak Thackar – Full Stack Developer</title>
-  <meta name="description" content="Falak Thackar – Full Stack Web & Mobile Developer using MERN and React Native." />
+  <title>Falak Thackar – King’s League Product Builder</title>
+  <meta name="description" content="Falak Thackar – Expert Full Stack Web & Mobile Developer for high-performance MVPs. MERN + React Native + WebSocket specialist." />
   <meta name="author" content="Falak Thackar">
   <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
   <script defer data-domain="falakthkr.github.io" src="https://plausible.io/js/script.js"></script>
@@ -47,19 +47,23 @@
       margin-bottom: 0.5rem;
     }
 
-    .projects {
+    .projects, .services, .blog {
       margin-top: 2rem;
     }
-    .project {
+
+    .project, .service {
       margin-bottom: 1.5rem;
     }
-    .project h3 {
+
+    .project h3, .service h3 {
       margin: 0 0 0.25rem;
     }
+
     a {
       color: #007acc;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -87,9 +91,11 @@
     .footer a {
       margin-right: 1rem;
     }
+
     form {
       margin-top: 2rem;
     }
+
     input, textarea {
       width: 100%;
       padding: 0.5rem;
@@ -98,44 +104,67 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    .blog ul li {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Hi, I’m Falak 👋</h1>
+  <h1>Fast MVPs. Clean Code. High Impact. 👑</h1>
   <p>
-    I build clean, functional web & mobile apps using <strong>React, Node, MongoDB, and React Native (Expo)</strong>.
-    Focused on fast MVP delivery, clear structure, and minimal dependencies.
+    I’m <strong>Falak Thackar</strong>, a Full‑Stack Product Builder. I help early-stage startups and solo founders launch investor-ready MVPs in 7 days or less using <strong>MERN, Expo, WebSocket</strong> and clean, scale-ready architecture.
   </p>
 
   <div class="buttons">
     <button onclick="toggleTheme()">🌓 Toggle Theme</button>
   </div>
 
-  <div class="projects">
-    <h2>🚀 Projects</h2>
+  <div class="services">
+    <h2>📦 Productized Builds & Rates</h2>
 
-    <div class="project">
-      <h3>MERN App</h3>
-      <p>Boilerplate MERN app with role-based auth and dashboard layout.</p>
-      <a href="https://github.com/falakthkr/mern-app" target="_blank">GitHub →</a>
+    <div class="service">
+      <h3>⚡ 7‑Day MVP Launch — ₹1.5L</h3>
+      <p>Complete MVP: Auth, dashboard, mobile/web, deployment + 7-day support.</p>
+      <a href="mailto:falakthackar@gmail.com?subject=7-Day MVP Build">Book This →</a>
     </div>
 
-    <div class="project">
-      <h3>React Native Expo App</h3>
-      <p>Expo-based mobile app starter with navigation and session handling.</p>
-      <a href="https://github.com/falakthkr/react-native-expo-app" target="_blank">GitHub →</a>
+    <div class="service">
+      <h3>📱 Expo Starter Kit — ₹75K</h3>
+      <p>Mobile-builder’s dream: navigation, login, session, clean structure.</p>
+      <a href="https://github.com/falakthkr/react-native-expo-app">View Code →</a>
     </div>
 
-    <div class="project">
-      <h3>Realtime Dashboard</h3>
-      <p>WebSocket-powered dashboard using MERN stack and Chart.js.</p>
-      <a href="https://github.com/falakthkr/realtime-dashboard-websocket" target="_blank">GitHub →</a>
+    <div class="service">
+      <h3>📊 Real-Time Dashboard Kit — ₹90K</h3>
+      <p>WebSocket-based Chart.js dashboard with live updates & role control.</p>
+      <a href="https://github.com/falakthkr/realtime-dashboard-websocket">View Code →</a>
+    </div>
+
+    <div class="service">
+      <h3>🛡 MERN Auth Boilerplate — ₹60K</h3>
+      <p>Full JWT auth, RBAC, UI scaffolding. Ideal SaaS or admin backend.</p>
+      <a href="https://github.com/falakthkr/mern-app">View Code →</a>
     </div>
   </div>
 
+  <div class="blog">
+    <h2>✍️ Latest Writings</h2>
+    <ul>
+      <li><a href="https://medium.com/@efteecodes/how-i-built-a-real-time-dashboard-mvp-in-2-days-with-websockets-react-c083c7b7d935" target="_blank">How I Built a Real‑Time Dashboard MVP in 2 Days</a></li>
+      <li><a href="https://medium.com/code-like-a-girl/from-code-to-creation-how-cursor-ai-revolutionised-my-development-journey-815617f7d035" target="_blank">From Code to Creation: How Cursor AI Revolutionised My Development Journey</a></li>
+      <li><a href="https://medium.com/code-like-a-girl/redis-and-me-a-love-story-of-speed-and-simplicity-d08fe7f5c406" target="_blank">Redis and Me: A Love Story of Speed and Simplicity</a></li>
+    </ul>
+  </div>
+
   <form action="https://formspree.io/f/xqabwjbz" method="POST">
-    <h2>📬 Contact Me</h2>
+    <h2>📬 Let’s Talk</h2>
+    <p>Have a project in mind or want to collaborate? Reach out directly or use the form below.</p>
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Project or message..." required></textarea>
@@ -148,7 +177,7 @@
       <a href="https://linkedin.com/in/falakthackar" target="_blank">💼 LinkedIn</a>
       <a href="https://github.com/falakthkr" target="_blank">🐙 GitHub</a>
     </p>
-    <p>Open to remote/hybrid roles & freelance builds.</p>
+    <p>Remote-first, founder-focused. Let’s build something that grows.</p>
   </div>
 
   <script>
