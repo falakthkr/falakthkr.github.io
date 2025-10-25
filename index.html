@@ -1200,6 +1200,10 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 20;
+            cursor: pointer;
+            pointer-events: auto;
         }
 
         .blog-link:hover {
@@ -1840,6 +1844,106 @@
         [data-theme="light"] footer {
             background: var(--navy-dark);
             border-top: 1px solid var(--border-subtle);
+        }
+
+        /* Light Mode Text Overrides */
+        [data-theme="light"] .section-title,
+        [data-theme="light"] .hero h1,
+        [data-theme="light"] .project-title,
+        [data-theme="light"] .case-study-title,
+        [data-theme="light"] .service-title,
+        [data-theme="light"] .product-title,
+        [data-theme="light"] .blog-title,
+        [data-theme="light"] .step-title,
+        [data-theme="light"] .category-title,
+        [data-theme="light"] .contact-info h3 {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .section-description,
+        [data-theme="light"] .hero-subtitle,
+        [data-theme="light"] .project-description,
+        [data-theme="light"] .case-study-challenge,
+        [data-theme="light"] .service-description,
+        [data-theme="light"] .product-description,
+        [data-theme="light"] .blog-excerpt,
+        [data-theme="light"] .step-description,
+        [data-theme="light"] .contact-info p {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .section-badge,
+        [data-theme="light"] .hero-badge,
+        [data-theme="light"] .project-number,
+        [data-theme="light"] .case-study-number,
+        [data-theme="light"] .step-number {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .nav-links a,
+        [data-theme="light"] .footer-links a {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .nav-links a:hover,
+        [data-theme="light"] .footer-links a:hover {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .logo {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .skill-name,
+        [data-theme="light"] .skill-percentage {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .result-number {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .result-label {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .case-study-category,
+        [data-theme="light"] .case-study-duration {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .case-study-solution h4 {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .case-study-solution li {
+            color: var(--pearl) !important;
+        }
+
+        [data-theme="light"] .tech-tag {
+            color: var(--pearl) !important;
+            border-color: var(--border-subtle) !important;
+        }
+
+        [data-theme="light"] .tech-tag:hover {
+            color: var(--platinum) !important;
+            border-color: var(--border-platinum) !important;
+        }
+
+        [data-theme="light"] .blog-date {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .project-link,
+        [data-theme="light"] .case-study-link,
+        [data-theme="light"] .blog-link {
+            color: var(--platinum) !important;
+        }
+
+        [data-theme="light"] .project-link:hover,
+        [data-theme="light"] .case-study-link:hover,
+        [data-theme="light"] .blog-link:hover {
+            color: var(--silver) !important;
         }
 
         @media (max-width: 768px) {
@@ -3089,6 +3193,9 @@
                             </div>
                         `;
                     }).join('');
+                    
+                    // Ensure blog links are clickable
+                    setupBlogLinks();
                 } else {
                     showPlaceholderPosts();
                 }
@@ -3131,6 +3238,29 @@
                     </a>
                 </div>
             `).join('');
+            
+            // Ensure blog links are clickable
+            setupBlogLinks();
+        }
+
+        // Setup Blog Links to ensure they're clickable
+        function setupBlogLinks() {
+            const blogLinks = document.querySelectorAll('.blog-link');
+            blogLinks.forEach(link => {
+                // Ensure the link is clickable
+                link.style.pointerEvents = 'auto';
+                link.style.zIndex = '20';
+                link.style.position = 'relative';
+                
+                // Add click event listener as backup
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    if (href) {
+                        window.open(href, '_blank', 'noopener,noreferrer');
+                    }
+                });
+            });
         }
 
         // Contact Form Handler
@@ -3376,6 +3506,9 @@
                     }
                 });
             });
+            
+            // Setup blog links as well
+            setupBlogLinks();
         });
     </script>
 </body>
